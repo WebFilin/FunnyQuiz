@@ -5,7 +5,7 @@
   background-color: rgb(118, 132, 201);
   border-radius: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
   box-shadow: 4px 4px 8px 7px rgba(34, 60, 80, 0.38);
@@ -32,14 +32,14 @@
 }
 
 .btn__next_wrapper {
+  position: absolute;
   width: 90%;
   height: auto;
-
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   margin-top: 5px;
+  bottom: 5%;
 }
 
 /* Large desktops and laptops */

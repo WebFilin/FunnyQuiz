@@ -2,7 +2,7 @@ import React from "react";
 
 import style from "./questionsLog.module.css";
 
-import arrQuestionsList from "../questionsList/arrQuestionsList";
+import arrQuestionsList from "../../data/questionsList/arrQuestionsList";
 
 import QuantityQuestions from "../QuantityQuestions/QuantityQuestions";
 
