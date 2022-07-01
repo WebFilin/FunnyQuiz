@@ -1,0 +1,10 @@
+.wrapper {
+  /* position: absolute; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+}
+

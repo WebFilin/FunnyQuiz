@@ -1,0 +1,16 @@
+.button {
+  font-size: 1.5em;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 5px rgba(34, 60, 80, 0.38);
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: 0px 0px 0px 0px rgba(34, 60, 80, 0.38);
+}
+
+.button:hover {
+  border: 1px solid red;
+}
