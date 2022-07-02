@@ -1,6 +1,3 @@
-![alt text](https://github.com/WebFilin/Quiz/blob/main/screenShot/display.jpg)
-
-
 # Funny Quiz
 
 Небольшой проект в виде интерактивного теста на различные вопросы
