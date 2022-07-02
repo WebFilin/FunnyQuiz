@@ -13,6 +13,9 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
   // Отключаем кнопки после выбора ответа
   const [btnStatus, setBtnStatus] = React.useState<boolean>(false);
 
+  const btnColorCorect = "#9cea15f3";
+  const BtnColorWrong = "#dc143c";
+
   //   Формируем массив кнопок
   const allBtn = React.useRef<any>(null);
   const arrBtns = React.useRef<any>([]);
@@ -27,7 +30,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
     //  Обнуляем фон элементов
     arrBtns.current.map((elem: any) => {
-      elem.style.backgroundColor = "";
+      elem.style.backgroundColor = null;
     });
   }, [answers, arrBtns]);
 
@@ -43,7 +46,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
     const target = checkBtn.currentTarget.value;
 
     checkBtn.target.style.backgroundColor = `${
-      target === "true" ? "green" : "red"
+      target === "true" ? btnColorCorect : BtnColorWrong
     }`;
   }
 
@@ -51,7 +54,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
   function colorazeCorrectBtn() {
     arrBtns.current.map((elem: any) => {
       if (elem.value === "true") {
-        elem.style.backgroundColor = "green";
+        elem.style.backgroundColor = btnColorCorect;
       }
     });
   }

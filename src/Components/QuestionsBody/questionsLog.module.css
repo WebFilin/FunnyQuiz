@@ -2,13 +2,13 @@
   position: relative;
   width: 20vw;
   height: 50vh;
-  background-color: rgb(118, 132, 201);
+  background-color: #ffd700;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
-  box-shadow: 4px 4px 8px 7px rgba(34, 60, 80, 0.38);
+  box-shadow: 3px 2px 6px 4px rgba(34, 60, 80, 0.38);
 }
 
 .body_quest {
