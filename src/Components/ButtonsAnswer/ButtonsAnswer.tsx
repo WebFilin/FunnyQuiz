@@ -22,6 +22,8 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
   React.useEffect(() => {
     arrBtns.current = Array.from(allBtn.current?.children);
+
+    console.log(arrBtns.current);
   }, []);
 
   React.useEffect(() => {
@@ -34,7 +36,10 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
     });
   }, [answers, arrBtns]);
 
-  function checkAnswer(checkBtn: any, checkAnswer: boolean) {
+  function checkAnswer(
+    checkBtn: React.MouseEvent<HTMLButtonElement>,
+    checkAnswer: boolean
+  ) {
     setBtnStatus(true);
     coloraizeBtnCheck(checkBtn);
     answersHandler(checkAnswer);
@@ -43,10 +48,10 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
   // Получаем кнопку по клику
   function coloraizeBtnCheck(checkBtn: any) {
-    const target = checkBtn.currentTarget.value;
+    const targetBtn = checkBtn.target.value;
 
     checkBtn.target.style.backgroundColor = `${
-      target === "true" ? btnColorCorect : BtnColorWrong
+      targetBtn === "true" ? btnColorCorect : BtnColorWrong
     }`;
   }
 
