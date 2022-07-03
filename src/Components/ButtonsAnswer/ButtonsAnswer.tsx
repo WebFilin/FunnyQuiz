@@ -22,8 +22,6 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
   React.useEffect(() => {
     arrBtns.current = Array.from(allBtn.current?.children);
-
-    console.log(arrBtns.current);
   }, []);
 
   React.useEffect(() => {
@@ -41,23 +39,21 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
     checkAnswer: boolean
   ) {
     setBtnStatus(true);
-    coloraizeBtnCheck(checkBtn);
+    coloraizeBtnCheck(checkBtn.target);
     answersHandler(checkAnswer);
     colorazeCorrectBtn();
   }
 
   // Получаем кнопку по клику
   function coloraizeBtnCheck(checkBtn: any) {
-    const targetBtn = checkBtn.target.value;
-
-    checkBtn.target.style.backgroundColor = `${
-      targetBtn === "true" ? btnColorCorect : BtnColorWrong
+    checkBtn.style.backgroundColor = `${
+      checkBtn.value === "true" ? btnColorCorect : BtnColorWrong
     }`;
   }
 
   //   При неправильном выборе подсвечиваем правильный ответ
   function colorazeCorrectBtn() {
-    arrBtns.current.map((elem: any) => {
+    arrBtns.current.map((elem: HTMLButtonElement) => {
       if (elem.value === "true") {
         elem.style.backgroundColor = btnColorCorect;
       }
