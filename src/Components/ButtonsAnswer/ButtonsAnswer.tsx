@@ -13,15 +13,19 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
   // Отключаем кнопки после выбора ответа
   const [btnStatus, setBtnStatus] = React.useState<boolean>(false);
 
-  const btnColorCorect = "#9cea15f3";
-  const BtnColorWrong = "#dc143c";
+  const btnColorCorect: string = "#9cea15f3";
+  const BtnColorWrong: string = "#dc143c";
 
   //   Формируем массив кнопок
-  const allBtn = React.useRef<any>(null);
+  const allBtn = React.useRef<HTMLDivElement>(null);
+
+//   !так же не ясно чо ему надо тут <Array<HTMLElement>> вызывает ошибку
   const arrBtns = React.useRef<any>([]);
 
   React.useEffect(() => {
-    arrBtns.current = Array.from(allBtn.current?.children);
+    arrBtns.current = allBtn.current
+      ? Array.from(allBtn?.current.children)
+      : [];
   }, []);
 
   React.useEffect(() => {
@@ -29,8 +33,8 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
     setBtnStatus(false);
 
     //  Обнуляем фон элементов
-    arrBtns.current.map((elem: any) => {
-      elem.style.backgroundColor = null;
+    arrBtns.current.map((elem: HTMLButtonElement) => {
+      elem.style.backgroundColor = "";
     });
   }, [answers, arrBtns]);
 
@@ -45,6 +49,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
   }
 
   // Получаем кнопку по клику
+//   !Непонятно что типизировать здесь - по идее это тот же HTMLButtonElement
   function coloraizeBtnCheck(checkBtn: any) {
     checkBtn.style.backgroundColor = `${
       checkBtn.value === "true" ? btnColorCorect : BtnColorWrong
