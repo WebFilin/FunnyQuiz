@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, FC } from "react";
+import React, { FC } from "react";
 
 import style from "./buttonsAnswer.module.css";
 
@@ -35,7 +35,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
   }, [answers, arrBtns]);
 
   function checkAnswer(
-    checkBtn: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    checkBtn: React.MouseEvent<HTMLButtonElement>,
     checkAnswer: boolean
   ) {
     setBtnStatus(true);
@@ -46,8 +46,6 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
   // Получаем кнопку по клику
   function coloraizeBtnCheck(checkBtn: any) {
-    console.log(checkBtn);
-
     checkBtn.style.backgroundColor = `${
       checkBtn.value === "true" ? btnColorCorect : BtnColorWrong
     }`;
@@ -55,7 +53,7 @@ const ButtonsAnswer: FC<IButtonsAnswer> = ({ answers, answersHandler }) => {
 
   //   При неправильном выборе подсвечиваем правильный ответ
   function colorazeCorrectBtn() {
-    arrBtns.current.map((elem: any) => {
+    arrBtns.current.map((elem: HTMLButtonElement) => {
       if (elem.value === "true") {
         elem.style.backgroundColor = btnColorCorect;
       }
