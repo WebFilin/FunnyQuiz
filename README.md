@@ -1,4 +1,4 @@
-![alt text](https://github.com/WebFilin/Quiz/blob/main/screenShot/display.jpg)
+![ALT](screenShot/display.jpg)
 
 # Funny Quiz
 
@@ -15,6 +15,3 @@
 - Динамическая подсветка ответов
 - Автоматический переход к следующему блоку вопросов при правильном выборе
 - Автоблокировка кнопок при ответе
-
-
-
